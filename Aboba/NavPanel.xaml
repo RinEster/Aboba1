@@ -8,7 +8,7 @@
         Height="450"  Width="675"
         Background="Transparent"  AllowsTransparency="True"
         WindowStyle="None" WindowStartupLocation="CenterScreen" >
-    <Border CornerRadius="10" Background="White" >
+      <Border CornerRadius="10" Background="White" >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -21,8 +21,26 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
-                
+
+                <StackPanel Grid.Row="0">
+                    <Button Content="Профиль" x:Name="profileButton" Click="profileButton_Click"
+                            Margin="0,0,0,10" Height="40" Background="#4CAF50" Foreground="White" 
+                            FontSize="16" FontWeight="Bold" BorderBrush="Transparent" 
+                            Cursor="Hand" />
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Button Content="Знакомства" x:Name="datingButton" Click="datingButton_Click" 
+                            Margin="0,0,0,10" Height="40" Background="#2196F3" Foreground="White" 
+                            FontSize="16" FontWeight="Bold" BorderBrush="Transparent" 
+                            Cursor="Hand" />
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <Button Content="Что-то" x:Name="somethingButton" Click="somethingButton_Click" 
+                            Margin="0,0,0,10" Height="40" Background="#FF9800" Foreground="White" 
+                            FontSize="16" FontWeight="Bold" BorderBrush="Transparent" 
+                            Cursor="Hand" />
+
+                </StackPanel>
                 
                 <Grid Grid.Row="3">
                     <Button Content="Exit" x:Name="exit" Click="exit_Click"/>

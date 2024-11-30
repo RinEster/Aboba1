@@ -67,23 +67,25 @@ namespace Aboba
 
         private void registrationButton_Click(object sender, RoutedEventArgs e)
         {
-            login = loginUser.Text.Trim();
-            string password = passUser.Password.Trim();
-            if (login != "" && password != "")
-            {
-                if(Correctness(login, password))
-                {
-                    RegistrationUser(login,password);
-                }
-                else
-                {
-                    MessageBox.Show("Некорректный ввод данных");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Заполните поля");
-            }
+            NavPanel navPanel = new NavPanel();
+            navPanel.Show();
+            //login = loginUser.Text.Trim();
+            //string password = passUser.Password.Trim();
+            //if (login != "" && password != "")
+            //{
+            //    if (Correctness(login, password))
+            //    {
+            //        RegistrationUser(login, password);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Некорректный ввод данных");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Заполните поля");
+            //}
         }
 
         bool Correctness(string login, string pass)
@@ -154,12 +156,6 @@ namespace Aboba
                 }
             }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            TestWindow testWindow = new TestWindow();
-            testWindow.Show();
-            this.Close();
-        }
+        
     }
 }
