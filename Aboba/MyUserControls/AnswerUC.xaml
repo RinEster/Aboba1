@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:Aboba.MyUserControls"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="250">
-    <Grid>
+    <Grid  Height="50" Width="150">
         <StackPanel x:Name="cont" Height="50" Width="150"/>
+        <Grid.Background>
+            <SolidColorBrush Color="Gray" Opacity="0.25" />
+        </Grid.Background>
     </Grid>
 </UserControl>
