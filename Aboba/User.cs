@@ -36,60 +36,63 @@ namespace Aboba
         //}
 
 
-        public class User //минимальные требования для работы функции рекомендации, сам класс переделайте под БД
-        {
-            public int id;
-            public int[] preferences;
+        //public class Wrapper
+        //{
+        //    public int Primary { get; init; }
+        //    public int Secondary { get; init; }
+        //}
 
-            private static int SameAnswers(int[] a, int[] b)
-            {
-                int d = 0;
-                for (int i = 0; i < a.Length; ++i)
-                {
-                    if (a[i] == b[i]) { d++; }
-                }
-                return d;
-            }
+        //public class User //минимальные требования для работы функции рекомендации, сам класс переделайте под БД
+        //{
+        //    public int id;
+        //    public int[] preferences;
 
-            public int[] recommendUsers(User user, User[] users)
-            {
-                int[][] prefOfUsers = new int[users.Length][];
-                int j = 0;
-                foreach (User u in users)
-                {
-                    if (u.id == user.id) continue;
-                    prefOfUsers[j] = new int[] { SameAnswers(user.preferences, u.preferences), u.id };
-                    ++j;
-                }
+        //    private static int SameAnswers(int[] a, int[] b)
+        //    {
+        //        int d = 0;
+        //        for (int i = 0; i < a.Length; ++i)
+        //        {
+        //            if (a[i] == b[i]) { d++; }
+        //        }
+        //        return d;
+        //    }
 
-            //Wrapper[] prefOfUsers1 = new Wrapper[users.Length - 1];
-                //int[][] prefOfUsers1 = new int[users.Length - 1][];
+        //    public int[] recommendUsers(User user, User[] users)
+        //    {
+        //        int[][] prefOfUsers = new int[users.Length][];
+        //        int j = 0;
+        //        foreach (User u in users)
+        //        {
+        //            if (u.id == user.id) continue;
+        //            prefOfUsers[j] = new int[] { SameAnswers(user.preferences, u.preferences), u.id };
+        //            ++j;
+        //        }
 
-                //for (int i = 0; i < users.Length - 1; ++i)
-                //{
-                //    prefOfUsers1[i] = new int[2];
-                //prefOfUsers1[i][0] = prefOfUsers
-                //    { Primary = prefOfUsers[i][0], Secondary = prefOfUsers[i][1] };
-                //    //prefOfUsers1[i].Primary = prefOfUsers1[0];
-                //    //prefOfUsers1[i].Secondary = prefOfUsers1[1];
-                //}
+        //        Wrapper[] prefOfUsers1 = new Wrapper[users.Length - 1];
 
-                var sorted = prefOfUsers.OrderBy(p => p[0])
-                     .ThenBy(p => p[1]);
+        //        for (int i = 0; i < users.Length - 1; ++i)
+        //        {
+        //            prefOfUsers1[i] = new() { Primary = prefOfUsers[i][0], Secondary = prefOfUsers[i][1] };
+        //            //prefOfUsers1[i].Primary = prefOfUsers1[0];
+        //            //prefOfUsers1[i].Secondary = prefOfUsers1[1];
+        //        }
 
-                //.OrderBy(p => p.Primary);
-                //List<int> prefOfUsers1 = prefOfUsers.OrderBy(prefOfUsers => prefOfUsers[0]);
-                int[] prefOfUsers2 = new int[users.Length - 1];
+        //        var sorted = prefOfUsers1.OrderBy(p => p.Primary)
+        //             .ThenBy(p => p.Secondary);
 
-                int k = 0;
-                foreach (var u in sorted)
-                {
-                    prefOfUsers2[k] = u[1];
-                    ++k;
-                }
-                prefOfUsers2 = prefOfUsers2.Reverse().ToArray();
-                return prefOfUsers2;
-            }
-        }
+        //        //.OrderBy(p => p.Primary);
+        //        //List<int> prefOfUsers1 = prefOfUsers.OrderBy(prefOfUsers => prefOfUsers[0]);
+        //        int[] prefOfUsers2 = new int[users.Length - 1];
+
+        //        int k = 0;
+        //        foreach (var u in sorted)
+        //        {
+        //            prefOfUsers2[k] = u.Secondary;
+        //            ++k;
+        //        }
+        //        prefOfUsers2 = prefOfUsers2.Reverse().ToArray();
+        //        return prefOfUsers2;
+        //    }
+        //}
 }
 

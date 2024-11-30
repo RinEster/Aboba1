@@ -17,33 +17,53 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid  Grid.Column="0">
-                <Grid.Background>
-                    <SolidColorBrush Color="White" Opacity="0.5" />
-                </Grid.Background>
+            <Grid Background="AliceBlue" Opacity="0.7" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
-                
-                
+
+                <StackPanel Grid.Row="0">
+                    <Button Content="Профиль" x:Name="profileButton" Click="profileButton_Click"
+                            Margin="0,0,0,10" Height="40" Background="#4CAF50" Foreground="White" 
+                            FontSize="20" FontWeight="Bold"  BorderThickness="3" 
+                            BorderBrush="#FF47A6DF" 
+                            Cursor="Hand" />
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Button Content="Знакомства" x:Name="datingButton" Click="datingButton_Click" 
+                            Margin="0,0,0,10" Height="40" Background="#2196F3" Foreground="White" 
+                            FontSize="20" FontWeight="Bold"  BorderThickness="3" 
+                            BorderBrush="#FF47A6DF" 
+                            Cursor="Hand" />
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <Button Content="Что-то" x:Name="somethingButton" Click="somethingButton_Click" 
+                            Margin="0,0,0,10" Height="40" Background="#FF9800" Foreground="White" 
+                            FontSize="20" FontWeight="Bold"  BorderThickness="3" 
+                            BorderBrush="#FF47A6DF"
+                            Cursor="Hand" />
+
+                </StackPanel>
+
                 <Grid Grid.Row="3">
                     <Button Content="Exit" x:Name="exit" Click="exit_Click"
-                            FontFamily="SemiBold" 
+                     HorizontalAlignment="Right"
+                        Width="200"
+                        FontFamily="SemiBold" 
                     FontSize="30"
-                    Foreground="Orange" Background="white" 
+                    Foreground="DarkGoldenrod"
                     BorderThickness="3" 
                     BorderBrush="#FF47A6DF"/>
                 </Grid>
             </Grid>
             <StackPanel x:Name="place" Grid.Column="1">
-                
+
             </StackPanel>
-            
-            
+
+
         </Grid>
     </Border>
 </Window>

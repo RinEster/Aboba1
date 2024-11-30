@@ -13,10 +13,6 @@
             <ImageBrush ImageSource="images/image1.png"  Stretch='Fill'/>
         </Border.Background>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="352*"/>
-                <ColumnDefinition Width="323*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="2.3*"/>
@@ -25,8 +21,8 @@
             <TextBlock Grid.Row="0" x:Name="category" FontSize="40" 
              Height="69" Width="500" TextAlignment="Center" Foreground="Black"
             Grid.ColumnSpan="2" Margin="0,0,0,312.6" Grid.RowSpan="2"/>
-            <StackPanel x:Name="hhhh" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0.2,67.6" Grid.RowSpan="2">
-
+            <StackPanel x:Name="hhhh" Grid.Row="1">
+                
             </StackPanel>
             <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0.4,0.2,-0.4">
                 <Button x:Name="next" Click="next_Click" Content="Next" Background="Bisque" 

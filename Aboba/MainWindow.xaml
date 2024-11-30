@@ -64,7 +64,7 @@
                     Margin="64,26.6,64,0"
                     Grid.Column="1" 
                      />
-                </Grid>
+                    </Grid>
             </Border>
             
         </Grid>
