@@ -36,12 +36,6 @@ namespace Aboba
         //}
 
 
-        public class Wrapper
-        {
-            public int Primary { get; init; }
-            public int Secondary { get; init; }
-        }
-
         public class User //минимальные требования для работы функции рекомендации, сам класс переделайте под БД
         {
             public int id;
@@ -68,17 +62,20 @@ namespace Aboba
                     ++j;
                 }
 
-                Wrapper[] prefOfUsers1 = new Wrapper[users.Length - 1];
+            //Wrapper[] prefOfUsers1 = new Wrapper[users.Length - 1];
+                //int[][] prefOfUsers1 = new int[users.Length - 1][];
 
-                for (int i = 0; i < users.Length - 1; ++i)
-                {
-                    prefOfUsers1[i] = new() { Primary = prefOfUsers[i][0], Secondary = prefOfUsers[i][1] };
-                    //prefOfUsers1[i].Primary = prefOfUsers1[0];
-                    //prefOfUsers1[i].Secondary = prefOfUsers1[1];
-                }
+                //for (int i = 0; i < users.Length - 1; ++i)
+                //{
+                //    prefOfUsers1[i] = new int[2];
+                //prefOfUsers1[i][0] = prefOfUsers
+                //    { Primary = prefOfUsers[i][0], Secondary = prefOfUsers[i][1] };
+                //    //prefOfUsers1[i].Primary = prefOfUsers1[0];
+                //    //prefOfUsers1[i].Secondary = prefOfUsers1[1];
+                //}
 
-                var sorted = prefOfUsers1.OrderBy(p => p.Primary)
-                     .ThenBy(p => p.Secondary);
+                var sorted = prefOfUsers.OrderBy(p => p[0])
+                     .ThenBy(p => p[1]);
 
                 //.OrderBy(p => p.Primary);
                 //List<int> prefOfUsers1 = prefOfUsers.OrderBy(prefOfUsers => prefOfUsers[0]);
@@ -87,7 +84,7 @@ namespace Aboba
                 int k = 0;
                 foreach (var u in sorted)
                 {
-                    prefOfUsers2[k] = u.Secondary;
+                    prefOfUsers2[k] = u[1];
                     ++k;
                 }
                 prefOfUsers2 = prefOfUsers2.Reverse().ToArray();
