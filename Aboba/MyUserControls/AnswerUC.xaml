@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:Aboba.MyUserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="675">
-    
     <Grid  Height="350" Width="250" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,6 +16,4 @@
             <SolidColorBrush Color="White" Opacity="0.5" />
         </Grid.Background>
     </Grid>
-
-    
 </UserControl>

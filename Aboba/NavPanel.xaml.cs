@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Aboba.Pages;
 namespace Aboba
 {
     /// <summary>
@@ -32,6 +32,22 @@ namespace Aboba
             {
                 Close();
             }
+        }  
+
+        private void profileButton_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile();
+            place.Children.Add(profile);
+        }
+
+        private void datingButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void somethingButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
